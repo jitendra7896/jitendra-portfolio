@@ -32,9 +32,9 @@ export const experienceData = [
   },
   {
     company: "Cognizant Technology Solutions",
-    time: "Oct 2020 - Present",
+    time: "Oct 2020 - April 2023",
     title: "Programmer Analyst",
     description:
-      "Programmer Analyst skilled in developing RESTful APIs and ensuring high quality through automation testing. Expertise in creating efficient, scalable solutions while maintaining high standards of software quality and reliability.",
+      "Programmer Analyst skilled in developing RESTful APIs adapting best practices and ensuring high quality through automation testing. Expertise in creating efficient, scalable solutions while maintaining high standards of software quality and reliability.Expertise in handling database queries for data handling anfd manipulation.",
   },
 ];

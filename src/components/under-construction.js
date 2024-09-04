@@ -3,7 +3,7 @@ import "../under-construction.scss";
 
 const UnderConstruction = () => {
   return (
-    <>
+    <div className="under-construction">
       <div className="overlay"></div>
       <div className="stars" aria-hidden="true"></div>
       <div className="starts2" aria-hidden="true"></div>
@@ -14,7 +14,7 @@ const UnderConstruction = () => {
           <h2 className="sub-title">Page Under Construction</h2>
         </section>
       </main>
-    </>
+    </div>
   );
 };
 

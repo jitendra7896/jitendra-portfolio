@@ -1,9 +1,11 @@
 import React from "react";
 import { experienceData } from "../constants/workdata";
 import profilePIc from "../assets/Images/profile-pic.png";
+import PowerButton from "../subComponents/PowerButton";
 const AboutPage = () => {
   return (
     <div className="resume-wrapper">
+      <PowerButton/>
       <section className="profile section-padding">
         <div className="container">
           <div className="picture-resume-wrapper">

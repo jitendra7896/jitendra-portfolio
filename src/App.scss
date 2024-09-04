@@ -1,0 +1,421 @@
+@import url(https://fonts.googleapis.com/css?family=Karla);
+@import url(https://fonts.googleapis.com/css?family=Pacifico);
+
+// Define variables
+$background-color: rgb(252, 246, 244);
+$text-color: #000000;
+$dark-color: #000000;
+$light-color: #FFFFFF;
+$power-button-bg: #FCF6F4;
+$power-button-hover-bg: rgba(0, 255, 0, 0.4);
+$power-button-shadow: 0 0 8px 6px rgba(0, 255, 0, 0.2);
+$box-border-color: var(--body-color);
+$box-border-alt-color: var(--text-color);
+$box-background-color: var(--body-color);
+$card-bg: rgb(252, 246, 244);
+$card-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+$card-shadow-hover: 0 8px 16px rgba(0, 0, 0, 0.3);
+$btn-bg: #1b1b1c;
+$btn-hover-bg: #000000;
+$modal-align: center;
+$modal-content-margin: auto;
+$icon-color: #66cc99;
+$icon-light-color: #000000;
+
+// Mixin for responsive design
+@mixin breakpoint($point) {
+  @if $point == papa-bear {
+    @media (max-width: 1500px) { @content; }
+  }
+  @if $point == mama-bear {
+    @media (max-width: 1200px) { @content; }
+  }
+  @if $point == brother-bear {
+    @media (max-width: 850px) { @content; }
+  }
+  @else if $point == baby-bear {
+    @media (max-width: 450px) { @content; }
+  }
+}
+
+// Global styles
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: 'Karla', sans-serif;
+}
+
+a {
+  color: $icon-color;
+  text-decoration: none;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+// Main container
+.main-container {
+  background: $background-color;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+// Dark div
+.dark-div {
+  position: absolute;
+  top: 0;
+  background-color: $dark-color;
+  bottom: 0;
+  right: 50%;
+  width: 0%;
+  height: 0%;
+  z-index: 1;
+  transition: height 0.5s ease, width 1s ease 0.5s;
+
+  &.active {
+    width: 50%;
+    height: 100%;
+  }
+}
+
+// Container padding
+.container {
+  padding: 2rem;
+}
+
+// Navigation links
+.contact,
+.blog,
+.work,
+.about,
+.skills {
+  color: $text-color;
+  text-decoration: none;
+  z-index: 1;
+}
+
+.contact {
+  top: 2rem;
+  right: calc(1rem + 2vw);
+  z-index: 1;
+  position: absolute;
+}
+
+.blog {
+  top: 50%;
+  right: calc(1rem + 2vw);
+  transform: rotate(90deg) translate(-50%, -50%);
+  position: absolute;
+  z-index: 1;
+}
+
+.work {
+  top: 50%;
+  left: calc(1rem + 2vw);
+  transform: translate(-50%, -50%) rotate(-90deg);
+  position: absolute;
+  z-index: 1;
+}
+
+.bottom-bar {
+  position: absolute;
+  bottom: 3rem;
+  left: 0;
+  right: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+// Active state
+.about.active,
+.work.active {
+  color: $light-color;
+}
+
+// Center button
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: all 1s ease;
+
+  &.clicked {
+    top: 85%;
+    left: 92%;
+  }
+
+  > :first-child {
+    animation: rotate 1.5s linear infinite;
+  }
+
+  > :last-child {
+    display: inline-block;
+    padding-top: 1rem;
+  }
+}
+
+// Power button
+.power-button {
+  position: fixed;
+  top: 2rem;
+  left: 50%;
+  transform: translate(-50%, 0);
+  background-color: $power-button-bg;
+  padding: 0.3rem;
+  border-radius: 50%;
+  border: 1px solid $dark-color;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+  cursor: pointer;
+  outline: none;
+  box-shadow: none;
+  transition: background-color 0.3s, box-shadow 0.3s;
+
+  &:hover {
+    background-color: $power-button-hover-bg;
+    box-shadow: $power-button-shadow;
+  }
+
+  > *:first-child {
+    text-decoration: none;
+    color: inherit;
+  }
+}
+
+// Logo
+.logo {
+  display: inline-block;
+  font-family: 'Pacifico', cursive;
+  position: fixed;
+  left: 2rem;
+  top: 2rem;
+  z-index: 3;
+
+  &.dark {
+    color: $light-color;
+  }
+
+  &.light {
+    color: $text-color;
+  }
+}
+
+// Icons
+.icons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  left: 2rem;
+  z-index: 3;
+
+  .icon {
+    margin: 0.5rem 0;
+  }
+
+  .line {
+    width: 2px;
+    background-color: $text-color;
+  }
+
+  &.dark .line {
+    background-color: $light-color;
+  }
+
+  &.light .line {
+    background-color: $text-color;
+  }
+
+  .icon a {
+    color: inherit;
+  }
+
+  .icon svg {
+    fill: currentColor;
+  }
+}
+
+// Box
+.box {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 65vw;
+  height: 55vh;
+  display: flex;
+  background: linear-gradient(
+    to right,
+    $box-border-color 50%,
+    $box-border-alt-color 50%
+  ) bottom,
+  linear-gradient(
+    to right,
+    $box-border-color 50%,
+    $box-border-alt-color 50%
+  ) top;
+  background-repeat: no-repeat;
+  background-size: 100% 2px;
+  border-left: 2px solid $box-border-color;
+  border-right: 2px solid $box-border-alt-color;
+  z-index: 1;
+}
+
+// Sub-box
+.sub-box {
+  width: 50%;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+}
+
+// Text
+.text {
+  font-size: calc(1em + 1.5vw);
+  color: $box-background-color;
+  padding: 2rem;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+
+  > *:last-child {
+    color: rgba($box-background-color, 0.6);
+    font-size: calc(0.5rem + 1.5vw);
+    font-weight: 300;
+  }
+}
+
+// Picture
+.pic {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  width: 100%;
+  height: auto;
+}
+
+// Work container
+.work-container {
+  padding: 20px;
+  text-align: center;
+  background: $dark-color;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+// Work cards
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Space between cards */
+  justify-content: center;
+}
+
+.work-card {
+  width: 300px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: $card-shadow;
+  border-radius: 0 50px 0 50px !important;
+  overflow: hidden;
+  background: $card-bg !important;
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: $card-shadow-hover;
+  }
+}
+
+// Card header, body, and footer
+.card-header {
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #dee2e6;
+  font-weight: bold;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.card-footer {
+  background-color: #f8f9fa;
+  border-top: 1px solid #dee2e6;
+}
+
+// Button
+.btn {
+  background-color: $btn-bg !important;
+  border-bottom: $btn-bg;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: $btn-hover-bg !important;
+  }
+}
+
+// Modal dialog
+.modal-dialog {
+  display: flex;
+  align-items: $modal-align;
+  justify-content: $modal-align;
+  height: 100%;
+}
+
+.modal-content {
+  margin: $modal-content-margin;
+}
+
+// Work grid
+.work-grid {
+  margin-top: 5rem !important;
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .box {
+    width: 90vw;
+    height: auto;
+  }
+
+  .text {
+    font-size: calc(0.8em + 1vw);
+  }
+}
+
+// Keyframes
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

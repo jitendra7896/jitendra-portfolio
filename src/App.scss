@@ -141,6 +141,8 @@ ol, ul {
 .about.active,
 .work.active {
   color: $light-color;
+  background-color: #000000;
+  z-index: 2;
 }
 
 // Center button
@@ -321,14 +323,24 @@ ol, ul {
   height: auto;
 }
 
-// Work container
 .work-container {
   padding: 20px;
   text-align: center;
-  background: $dark-color;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
+  background: #333; /* Replace $dark-color with the actual color value */
+  min-height: 100vh; /* Ensure it takes at least the full viewport height */
+  box-sizing: border-box; /* Include padding in height calculation */
+  position: relative; /* Ensure the container's position context is set */
+}
+
+.work-container::after {
+  content: "";
+  display: block;
+  height: 100%; /* Ensure it stretches to the full height of the container */
+}
+
+.work-container {
+  height: calc(100vh + 100%); /* Adjust height to include overflow if necessary */
+  overflow: auto; /* Allow scrolling if content overflows */
 }
 
 // Work cards

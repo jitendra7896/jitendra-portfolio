@@ -409,6 +409,31 @@ ol, ul {
   margin-top: 5rem !important;
 }
 
+.myBubbleUI {
+  width: 100%;
+  height: 100vh;
+  background-color: #505153;
+}
+
+.child {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.childComponent {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  display: flex;
+  user-select: none;
+  align-items: center;
+  justify-content: center;
+  background-color: wheat;
+  margin: 0;
+  background: radial-gradient(circle at 100px 100px, wheat, #000);
+}
+
 // Responsive adjustments
 @media (max-width: 768px) {
   .box {

@@ -38,3 +38,58 @@ export const experienceData = [
       "Programmer Analyst skilled in developing RESTful APIs adapting best practices and ensuring high quality through automation testing. Expertise in creating efficient, scalable solutions while maintaining high standards of software quality and reliability.Expertise in handling database queries for data handling anfd manipulation.",
   },
 ];
+
+// Sample data for technical skills
+export const technicalSkills = [
+  {
+    title: 'CSS',
+  },
+  {
+    title: 'HTML',
+  },
+  {
+    title: 'JavaScript',
+  },
+  {
+    title: 'Java',
+  },
+  {
+    title: 'SpringBoot',
+  },
+  {
+    title: 'JSP',
+  },
+  {
+    title: 'React',
+  },
+  {
+    title: 'Liferay',
+  },
+  {
+    title: 'Jira',
+  },
+  {
+    title: 'Maven',
+  },
+  {
+    title: 'Postman',
+  },
+  {
+    title: 'MySQL',
+  },
+  {
+    title: 'MongoDB',
+  },
+  {
+    title: 'SQL',
+  },
+  {
+    title: 'Git',
+  },
+  {
+    title: 'Docker Basics',
+  },
+  {
+    title: 'Node JS',
+  },
+];

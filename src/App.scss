@@ -412,7 +412,7 @@ ol, ul {
 .myBubbleUI {
   width: 100%;
   height: 100vh;
-  background-color: #505153;
+  background-color: wheat;
 }
 
 .child {
@@ -429,9 +429,9 @@ ol, ul {
   user-select: none;
   align-items: center;
   justify-content: center;
-  background-color: wheat;
+  background-color: white;
   margin: 0;
-  background: radial-gradient(circle at 100px 100px, wheat, #000);
+  background: radial-gradient(circle at 100px 100px, white, #3d3e42);
 }
 
 // Responsive adjustments

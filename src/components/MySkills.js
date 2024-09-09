@@ -3,6 +3,7 @@ import BubbleUI from 'react-bubble-ui';
 import 'react-bubble-ui/dist/index.css';
 import ChildComponent from './react-bubble';
 import { technicalSkills } from '../constants/workdata';
+import PowerButton from '../subComponents/PowerButton';
 
 const MySkillsPage = () => {
   const options = {
@@ -25,9 +26,12 @@ const MySkillsPage = () => {
   ));
 
   return (
+    <>
+    <PowerButton/>
     <BubbleUI options={options} className="myBubbleUI">
       {children}
     </BubbleUI>
+    </>
   );
 };
 
